@@ -36,16 +36,18 @@ the structure should be:
 
 | - plugins
 | - - fckphplist.php
-| - fckphplist
-| - - config.php
-| - - firefox_detect.patch
-| - - phplist_config.path
-| - - apply.sh
-| - - fckeditor
-| - - - editor
-| - - - - filemanager
-| - - - - - connectors
-| - - - - - - phplist
+| - - fckphplist
+| - - - config.php
+| - - - firefox_detect.patch
+| - - - phplist_config.path
+| - - - apply.sh
+| - - - fckeditor
+| - - - - editor
+| - - - - - filemanager
+| - - - - - - connectors
+| - - - - - - - phplist
+
+Then edit the fckphplist.php source and mark it "enabled" at the top.
 
 Now load the Campaign Creation page and the editor should load.
 
