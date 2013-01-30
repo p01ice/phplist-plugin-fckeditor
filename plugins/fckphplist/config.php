@@ -150,7 +150,7 @@ FCKConfig.ToolbarSets["Default"] = [
   ['Image','FontFormat','About']
 
   <?php
-    $editor_secondrow = getConfig('editortoolbar_row2');
+    $editor_secondrow = getConfig('fckeditortoolbar_row2');
    if (!empty($editor_secondrow)) {
     print ",'/',\n";
     $tools = cleanCommaList($editor_secondrow);
