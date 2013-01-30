@@ -16,6 +16,41 @@ class fckphplist extends phplistPlugin {
   public $authors = 'Michiel Dethmers';
   public $enabled = 0;
   
+  public $settings = array(
+    "fckeditor_width" => array (
+      'value' => 600,
+      'description' => 'Width in px of FCKeditor Area',
+      'type' => "integer",
+      'allowempty' => 0,
+      'min' => 100,
+      'max' => 800,
+      'category'=> 'composition',
+    ),
+    "fckeditor_height" => array (
+      'value' => 600,
+      'description' => 'Height in px of FCKeditor Area',
+      'type' => "integer",
+      'allowempty' => 0,
+      'min' => 100,
+      'max' => 800,
+      'category'=> 'composition',
+    ),
+    "fckeditortoolbar_row2" => array (
+      'value' => '',
+      'description' => 'Second row of toolbar elements in the editor',
+      'type' => "text",
+      'allowempty' => 1,
+      'category'=> 'composition',
+    ),
+    "fckeditor_path" => array (
+      'value' => 'plugins/fckphplist/fckeditor/',
+      'description' => 'Public path to the FCKeditor',
+      'type' => "text",
+      'allowempty' => 0,
+      'category'=> 'composition',
+    ),
+  );
+
   function fckphplist() {
     parent::phplistplugin();
     $this->coderoot = dirname(__FILE__).'/fckphplist/';
@@ -30,7 +65,8 @@ class fckphplist extends phplistPlugin {
     include_once $this->coderoot.'/fckeditor/fckeditor.php';
     if (!class_exists('FCKeditor')) return 'Editor class not found';
     $oFCKeditor = new FCKeditor($fieldname) ;
-    $oFCKeditor->BasePath = 'plugins/fckphplist/fckeditor/';
+    $fckPath = getConfig("fckeditor_path");
+    $oFCKeditor->BasePath = $fckPath;
     $oFCKeditor->ToolbarSet = 'Default' ;
     $oFCKeditor->Value = $content;
     $w = getConfig("fckeditor_width");
