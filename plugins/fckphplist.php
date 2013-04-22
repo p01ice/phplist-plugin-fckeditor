@@ -14,7 +14,8 @@ class fckphplist extends phplistPlugin {
   public $editorProvider = true;
   public $version = "0.1";
   public $authors = 'Michiel Dethmers';
-  public $enabled = 0;
+  public $enabled = 1;
+  public $description = 'The original WYSIWYG editor for phpList';
   
   public $settings = array(
     "fckeditor_width" => array (
@@ -71,7 +72,7 @@ class fckphplist extends phplistPlugin {
     $oFCKeditor->Value = $content;
     $w = getConfig("fckeditor_width");
     $h = getConfig("fckeditor_height");
-    if ($_SESSION["fckeditor_height"]) {
+    if (isset($_SESSION["fckeditor_height"])) {
       $h = sprintf('%d',$_SESSION["fckeditor_height"]);
     }
 
