@@ -63,6 +63,9 @@ class fckphplist extends phplistPlugin {
   }
   
   function editor($fieldname,$content) {
+    if (!is_file($this->coderoot.'/fckeditor/fckeditor.php')) {
+      return '<textarea name="'.$fieldname.'">'.htmlspecialchars($content).'</textarea>';
+    }
     include_once $this->coderoot.'/fckeditor/fckeditor.php';
     if (!class_exists('FCKeditor')) return 'Editor class not found';
     $oFCKeditor = new FCKeditor($fieldname) ;
