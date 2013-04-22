@@ -20,6 +20,8 @@ seems to resolve this issue.
 
 It just needs to be done :-)
 
+Check out https://github.com/bramley/phplist-ckeditorplugin for this.
+
 requirements:
 
 - phpList version 2.11.7 or up
