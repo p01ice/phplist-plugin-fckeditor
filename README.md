@@ -18,9 +18,7 @@ which means that upgrading to the latest CKeditor will remove the image browse a
 from phpList. However, the KCfinder project on Sourceforge https://sourceforge.net/projects/kcfinder
 seems to resolve this issue.
 
-It just needs to be done :-)
-
-Check out https://github.com/bramley/phplist-ckeditorplugin for this.
+It just needs to be done :-) Check out https://github.com/bramley/phplist-plugin-ckeditor 
 
 requirements:
 
