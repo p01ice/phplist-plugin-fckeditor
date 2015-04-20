@@ -16,6 +16,11 @@ class fckphplist extends phplistPlugin {
   public $authors = 'Michiel Dethmers';
   public $enabled = 1;
   public $description = 'The original WYSIWYG editor for phpList';
+  public $dependencyCheck = array(
+    'phpList version newer than 3.0.10' => 'VERSION > "3.0.10"',
+    'PHP version newer than 5.3' => 'PHP_VERSION_ID > 50300;',
+    'No other editor enabled' => 'empty($GLOBALS["editorplugin"]) || $GLOBALS["editorplugin"] == "fckphplist"',
+  );
   
   public $settings = array(
     "fckeditor_width" => array (
