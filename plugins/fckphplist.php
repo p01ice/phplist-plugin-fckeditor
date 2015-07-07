@@ -12,7 +12,7 @@ class fckphplist extends phplistPlugin {
   public $name = "FCKeditor plugin for phpList";
   public $coderoot = "fckphplist/";
   public $editorProvider = true;
-  public $version = "0.1";
+  public $version = "0.2";
   public $authors = 'Michiel Dethmers';
   public $enabled = 1;
   public $description = 'The original WYSIWYG editor for phpList';
@@ -62,6 +62,15 @@ class fckphplist extends phplistPlugin {
     );
   }
   
+    public function dependencyCheck()
+    {
+      return array(
+        'phpList version' => version_compare(VERSION, '3.0.12') >= 0,
+        'PHP version' => PHP_VERSION_ID > 50300,
+        'No other editor enabled' => empty($GLOBALS["editorplugin"]) || $GLOBALS["editorplugin"] == "fckphplist",
+      );
+    }
+   
   function editor($fieldname,$content) {
     if (!is_file($this->coderoot.'/fckeditor/fckeditor.php')) {
       return '<textarea name="'.$fieldname.'">'.htmlspecialchars($content).'</textarea>';
