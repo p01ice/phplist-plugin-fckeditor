@@ -4,7 +4,7 @@ if (!defined('PHPLISTINIT')) exit;
 
 if ($_GET['action'] == 'js4') { 
   ob_end_clean();
-  header('Content-type: text/plain');
+  header('Content-type: application/javascript');
   $req = Sql_query(sprintf('select name from %s where type in ("textline","select") order by listorder',$GLOBALS['tables']['attribute']));
   $attnames = ';preferences url;unsubscribe url';
   $attcodes = ';[PREFERENCES];[UNSUBSCRIBE]';
