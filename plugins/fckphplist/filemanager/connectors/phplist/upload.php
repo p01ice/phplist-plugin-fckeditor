@@ -20,7 +20,7 @@
  * == END LICENSE ==
  *
  * This is the "File Uploader" for PHP.
- */
+
 
 require('./config.php') ;
 require('./util.php') ;
@@ -57,5 +57,6 @@ if ( !IsAllowedType( $sType ) )
 
 
 FileUpload( $sType, $sCurrentFolder, $sCommand )
-
+*/
+phpinfo();
 ?>
